@@ -7,6 +7,6 @@
         <Entry x:Name="LiveStockName" Placeholder="Enter Livestock type(Cow/Sheep): " Margin="10"/>
         <Label Text="Enter Quantity of:" Margin="10"/>
         <Entry x:Name="LiveStockQuantity" Placeholder="Enter Quantity of" Margin="10"/>
-        <Button Clicked="CalculateStats" Text="Calculate Stats" Margin="10"/>
+        <Button Clicked="CalculateStats1" Text="Calculate Stats" Margin="10"/>
     </VerticalStackLayout>
 </ContentPage>

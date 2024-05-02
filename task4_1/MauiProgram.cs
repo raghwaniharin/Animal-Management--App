@@ -21,6 +21,8 @@ public static class MauiProgram
 #endif
         builder.Services.AddSingleton<MainViewModel>();
         builder.Services.AddTransient<DataPage>();
+		builder.Services.AddTransient<Statistics>();
+		//builder.Services.AddTransient<InvestmentForecast>();
         return builder.Build();
 	}
 }
