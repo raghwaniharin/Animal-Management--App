@@ -9,12 +9,12 @@
            
         </Grid.RowDefinitions>
         <Label Text="Based on current livestock data" Grid.Row="0" Margin="10" />
-        <Label Text="Government Tax for 30 Days" Grid.Row="0" Margin="10" />
-        <Label Text="Farm Daily Profit" Grid.Row="1" Margin="10" />
+        <Label Text="Government Tax for 30 Days" Grid.Row="1" Margin="10" />
+        <Label Text="Farm Daily Profit" Grid.Row="2" Margin="10" />
 
-        <Label x:Name="govttax" Grid.Row="0" Grid.Column="1" Margin="10" HorizontalOptions="EndAndExpand" />
-        <Label x:Name="farmdailyprofit" Grid.Row="1" Grid.Column="1" Margin="10" HorizontalOptions="EndAndExpand" />
-        <Button Grid.Column="0" Grid.Row="1" Clicked="CalulateStats" Text="CalculateStats"/>
+        <Label x:Name="govttax" Grid.Row="1" Grid.Column="1" Margin="10" HorizontalOptions="EndAndExpand" />
+        <Label x:Name="farmdailyprofit" Grid.Row="2" Grid.Column="1" Margin="10" HorizontalOptions="EndAndExpand" />
+        <Button Grid.Column="0" Grid.Row="3" Clicked="CalulateStats" Text="CalculateStats"/>
     </Grid>
 
 </ContentPage>
