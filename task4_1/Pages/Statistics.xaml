@@ -12,8 +12,8 @@
         <Label Text="Government Tax for 30 Days" Grid.Row="0" Margin="10" />
         <Label Text="Farm Daily Profit" Grid.Row="1" Margin="10" />
 
-        <Label Text="{Binding GovernmentTaxFor30Days}" Grid.Row="0" Grid.Column="1" Margin="10" HorizontalOptions="EndAndExpand" />
-        <Label Text="{Binding FarmDailyProfit}" Grid.Row="1" Grid.Column="1" Margin="10" HorizontalOptions="EndAndExpand" />
+        <Label x:Name="govttax" Grid.Row="0" Grid.Column="1" Margin="10" HorizontalOptions="EndAndExpand" />
+        <Label x:Name="farmdailyprofit" Grid.Row="1" Grid.Column="1" Margin="10" HorizontalOptions="EndAndExpand" />
         <Button Grid.Column="0" Grid.Row="1" Clicked="CalulateStats" Text="CalculateStats"/>
     </Grid>
 

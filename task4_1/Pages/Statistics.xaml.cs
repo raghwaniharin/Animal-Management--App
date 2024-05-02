@@ -31,5 +31,7 @@ public partial class Statistics : ContentPage
         });
         double totalCost = Animals.Sum(animal => animal.Cost);
         double FarmDailyProfit = totalIncome - totalCost - GovernmentTaxFor30Days;
+        farmdailyprofit.Text = $"Type of Employee:: {FarmDailyProfit}\n ";
+        govttax.Text = $"$ {GovernmentTaxFor30Days}";
     }
 }
