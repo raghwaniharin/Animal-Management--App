@@ -8,12 +8,9 @@
             <RowDefinition Height="Auto" />
 
         </Grid.RowDefinitions>
-        <Entry x:Name="Enter LiveStock type: "
-        <Label Text="Enter Investment Quantity of cow" Grid.Row="1" Margin="10" />
-        <Label Text="Farm Daily Profit" Grid.Row="2" Margin="10" />
-
-        <Label x:Name="govttax" Grid.Row="1" Grid.Column="1" Margin="10" HorizontalOptions="EndAndExpand" />
-        <Label x:Name="farmdailyprofit" Grid.Row="2" Grid.Column="1" Margin="10" HorizontalOptions="EndAndExpand" />
+        <Entry x:Name="LiveStockName" Placeholder="Enter Livestock type(Cow/Sheep): "Grid.Row="0" Margin="10" />
+        <Entry x:Name ="LiveStockQauntity" Placeholder="Enter Qauntity of " Grid.Row="1" Margin="10" />
+        <Label Text="" Grid.Row="2" Margin="10" 
         <Button Grid.Column="0" Grid.Row="3" Clicked="CalulateStats" Text="CalculateStats"/>
     </Grid>
 </ContentPage>
