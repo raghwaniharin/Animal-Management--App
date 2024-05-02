@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="task4_1.Pages.Statistics"
+             Title="Statistics">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+           
+        </Grid.RowDefinitions>
+
+        <Label Text="Government Tax for 30 Days" Grid.Row="0" Margin="10" />
+        <Label Text="Farm Daily Profit" Grid.Row="1" Margin="10" />
+
+        <Label Text="{Binding GovernmentTaxFor30Days}" Grid.Row="0" Grid.Column="1" Margin="10" HorizontalOptions="EndAndExpand" />
+        <Label Text="{Binding FarmDailyProfit}" Grid.Row="1" Grid.Column="1" Margin="10" HorizontalOptions="EndAndExpand" />
+        <Button Grid.Column="0" Grid.Row="1" Clicked="IdEntryBtn_click" Text="OK"/>
+    </Grid>
+
+</ContentPage>
