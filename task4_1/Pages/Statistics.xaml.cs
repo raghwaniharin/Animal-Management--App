@@ -15,7 +15,7 @@ public partial class Statistics : ContentPage
     {
         double governmentTaxRate = 0.02; // Government tax rate per kg per day
         double totalWeight = Animals.Sum(animal => animal.Weight);
-        GovernmentTaxFor30Days = governmentTaxRate * totalWeight * 30;
+        double GovernmentTaxFor30Days = governmentTaxRate * totalWeight * 30;
 
         // Calculate farm daily profit
         double cowMilkPrice = 9.4; // $ per kg
@@ -30,6 +30,6 @@ public partial class Statistics : ContentPage
                 return 0;
         });
         double totalCost = Animals.Sum(animal => animal.Cost);
-        FarmDailyProfit = totalIncome - totalCost - GovernmentTaxFor30Days;
+        double FarmDailyProfit = totalIncome - totalCost - GovernmentTaxFor30Days;
     }
 }

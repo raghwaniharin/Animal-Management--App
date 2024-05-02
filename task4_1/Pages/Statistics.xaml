@@ -8,7 +8,7 @@
             <RowDefinition Height="Auto" />
            
         </Grid.RowDefinitions>
-
+        <Label Text="Based on current livestock data" Grid.Row="0" Margin="10" />
         <Label Text="Government Tax for 30 Days" Grid.Row="0" Margin="10" />
         <Label Text="Farm Daily Profit" Grid.Row="1" Margin="10" />
 
