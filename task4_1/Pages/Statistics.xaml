@@ -4,14 +4,14 @@
              x:Class="task4_1.Pages.Statistics"
              Title="Statistics">
     <Grid  Margin="0,30" ColumnDefinitions="*,*,*" ColumnSpacing="30" HorizontalOptions="Center"
-          RowDefinitions="*,*,*,*,*,*,*,*,*,*,*" RowSpacing="14"  VerticalOptions="Center">
+          RowDefinitions="*,*,*,*,*,*,*,*,*,*,*" RowSpacing="10"  VerticalOptions="Center">
         
             <Grid.Resources>
                 <Style TargetType="Label">
                     <Setter Property="HorizontalOptions" Value="Center"/>
                     <Setter Property="FontSize" Value="Small"/>
                     <Setter Property="HeightRequest" Value="50"/>
-                    <Setter Property="WidthRequest" Value="400"/>
+                    <Setter Property="WidthRequest" Value="350"/>
                 </Style>
             </Grid.Resources>
 
@@ -31,6 +31,12 @@
         <Label Text="on average, a single Sheep makes daily profit:" Grid.Row="5" Grid.Column="0"/>
         <Label Text="current daily profit of all cows is:" Grid.Row="6" Grid.Column="0"/>
         <Label Text="current daily profit of all sheep is:" Grid.Row="7" Grid.Column="0"/>
+
+        <Label x:Name="avgcowdailyprft"  Grid.Row="4" Grid.Column="1"/>
+        <Label x:Name="avgsheepdailyprft" Grid.Row="5" Grid.Column="1"/>
+        <Label x:Name="cowdailyprft" Grid.Row="6" Grid.Column="1"/>
+        <Label x:Name="sheepdailyprft" Grid.Row="7" Grid.Column="1"/>
+        
     </Grid>
 
 </ContentPage>
