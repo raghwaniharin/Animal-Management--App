@@ -11,6 +11,7 @@ public partial class Statistics : ContentPage
 		BindingContext = vm;
 	}
 
+    //comment from jessie 
     private void CalulateStats(object sender, EventArgs e)
     {
         double governmentTaxRate = 0.02; // Government tax rate per kg per day
