@@ -3,14 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="task4_1.Pages.InvestmentForecast"
              Title="InvestmentForecast">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-
-        </Grid.RowDefinitions>
-        <Entry x:Name="LiveStockName" Placeholder="Enter Livestock type(Cow/Sheep): "Grid.Row="0" Margin="10" />
-        <Entry x:Name ="LiveStockQauntity" Placeholder="Enter Qauntity of " Grid.Row="1" Margin="10" />
-        <Label Text="" Grid.Row="2" Margin="10" 
-        <Button Grid.Column="0" Grid.Row="3" Clicked="CalulateStats" Text="CalculateStats"/>
-    </Grid>
+    <VerticalStackLayout>
+        <Entry x:Name="LiveStockName" Placeholder="Enter Livestock type(Cow/Sheep): " Margin="10"/>
+        <Label Text="Enter Quantity of:" Margin="10"/>
+        <Entry x:Name="LiveStockQuantity" Placeholder="Enter Quantity of" Margin="10"/>
+        <Button Clicked="CalculateStats" Text="Calculate Stats" Margin="10"/>
+    </VerticalStackLayout>
 </ContentPage>
