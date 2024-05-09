@@ -73,7 +73,6 @@ public partial class QuerryPage : ContentPage
                 Text = animal.ToString(),
                 Margin = new Thickness(0, 10),
               };
-            animalListContainer.Children.Add(animalLabel);
 
 
         }
