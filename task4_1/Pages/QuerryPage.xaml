@@ -1,0 +1,30 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:task4_1.Pages"
+             x:Class="task4_1.Pages.QuerryPage"
+             Title="Query Page">
+
+    <Grid Padding="20" ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*">
+        <Label Text="Select Livestock Type:" VerticalOptions="Center" HorizontalOptions="Start"  Grid.Column="0" Grid.Row="0"/>
+        <Picker x:Name="typePicker" Title="Select Type" SelectedIndexChanged="OnTypeSelectedIndexChanged" Grid.Column="1" Grid.Row="0">
+            <Picker.Items>
+                <x:String>Cow</x:String>
+                <x:String>Sheep</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Label Text="Select Colour:" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="0" Grid.Row="1"/>
+        <Picker x:Name="colourPicker" Title="Select Colour" SelectedIndexChanged="OnColourSelectedIndexChanged" Grid.Row="1" Grid.Column="1">
+            <Picker.Items>
+                <x:String>All</x:String>
+                <x:String>Black</x:String>
+                <x:String>White</x:String>
+            </Picker.Items>
+        </Picker>
+        <ScrollView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
+            <StackLayout x:Name="animalListContainer"/>
+        </ScrollView>
+        <Button Text="Search" Clicked="OnSearchClicked" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="2"/>
+    </Grid>
+
+</ContentPage>

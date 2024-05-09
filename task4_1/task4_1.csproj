@@ -63,7 +63,7 @@
 	  <MauiXaml Update="Pages\DataPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\QueryPage.xaml">
+	  <MauiXaml Update="Pages\QuerryPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Statistics.xaml">

@@ -5,7 +5,14 @@ public partial class Statistics : ContentPage
     
     
     MainViewModel vm;
-
+    public double cowMilkPrice = 9.4; // $ per kg
+    public double sheepWoolPrice = 6.2; // $ per kg
+    public double governmentTaxRate = 0.02; // Government tax rate per kg per day
+    public double totalWeight;
+    public double GovernmentTaxDaily;
+    public double avgweight;
+    public int countSheep;
+    public int countCow;
     public Statistics(MainViewModel vm)
 	{
 		InitializeComponent();
@@ -17,52 +24,52 @@ public partial class Statistics : ContentPage
     private void CalulateStats(object sender, EventArgs e)
     {
         
-        vm.totalWeight = vm.Animals.Sum(animal => animal.Weight);
-        vm.GovernmentTaxDaily = vm.governmentTaxRate * vm.totalWeight;
-        vm.avgweight = vm.totalWeight / vm.Animals.Count;
-        vm.countSheep = vm.Animals.Count(animal => animal is Sheep);
-        vm.countCow = vm.Animals.Count(animal => animal is Cow);
+        totalWeight = vm.Animals.Sum(animal => animal.Weight);
+        GovernmentTaxDaily = governmentTaxRate * totalWeight;
+        avgweight = totalWeight / vm.Animals.Count;
+        countSheep = vm.Animals.Count(animal => animal is Sheep);
+        countCow = vm.Animals.Count(animal => animal is Cow);
 
         // Calculate farm daily profit
         
         double totalIncome = vm.Animals.Sum(animal =>
         {
             if (animal is Cow cow)
-                return cow.Milk * vm.cowMilkPrice;
+                return cow.Milk * cowMilkPrice;
             else if (animal is Sheep sheep)
-                return sheep.Wool * vm.sheepWoolPrice;
+                return sheep.Wool * sheepWoolPrice;
             else
                 return 0;
         });
         double totalCost = vm.Animals.Sum(animal => animal.Cost);
-        double FarmDailyProfit = totalIncome - totalCost - (vm.GovernmentTaxDaily);
+        double FarmDailyProfit = totalIncome - totalCost - (GovernmentTaxDaily);
         farmdailyprofit.Text = $"$ {FarmDailyProfit:F2}";
-        govttax.Text = $"$ {vm.GovernmentTaxDaily*30:F2}";
-        averageweight.Text = $"$ {vm.avgweight:F2}";
+        govttax.Text = $"$ {GovernmentTaxDaily *30:F2}";
+        averageweight.Text = $"$ {avgweight:F2}";
                
         double cowprofit = vm.Animals.Sum(animal => 
         {
             if (animal is Cow cow)
             {
-                return (cow.Milk * vm.cowMilkPrice)- cow.Cost - (cow.Milk * vm.governmentTaxRate);
+                return (cow.Milk * cowMilkPrice)- cow.Cost - (cow.Milk * governmentTaxRate);
             }
             else return 0;
         }
         );
         
         cowdailyprft.Text = $"$ {cowprofit:F2}";
-        avgcowdailyprft.Text = $"$ {(cowprofit / vm.countCow):F2}";
+        avgcowdailyprft.Text = $"$ {(cowprofit / countCow):F2}";
         
         double sheepprofit = vm.Animals.Sum(animal =>
         {
             if (animal is Sheep sheep)
             {
-                return (sheep.Wool * vm.sheepWoolPrice) - sheep.Cost - (sheep.Wool * vm.governmentTaxRate);
+                return (sheep.Wool * sheepWoolPrice) - sheep.Cost - (sheep.Wool * governmentTaxRate);
             }
             else return 0;
         }
         );
         sheepdailyprft.Text = $"${sheepprofit:F2}";
-        avgsheepdailyprft.Text = $"${(sheepprofit / vm.countSheep):F2}";
+        avgsheepdailyprft.Text = $"${(sheepprofit / countSheep):F2}";
     }
 }
