@@ -14,8 +14,7 @@ public partial class QuerryPage : ContentPage
     private void OnTypeSelectedIndexChanged(object sender, EventArgs e)
     {
         string selectedType = typePicker.SelectedItem.ToString();
-
-        // Clear previous selections
+        //typePicker.SelectedIndex = 0;
         colourPicker.SelectedIndex = 0;
 
         // Enable/disable colour options based on selected type
@@ -40,7 +39,7 @@ public partial class QuerryPage : ContentPage
             string selectedColour = colourPicker.SelectedItem.ToString();
             //DisplayAlert("Selected Colour", $"You selected: {selectedColour}", "OK");
         }
-        
+
     }
 
     private void OnSearchClicked(object sender, EventArgs e)
@@ -64,18 +63,88 @@ public partial class QuerryPage : ContentPage
             }
             return isMatch;
         }).ToList();
-        animalListContainer.Children.Clear();
+
+        int totalLivestockCount = matchingAnimals.Count;
+        double percentage = (double)totalLivestockCount / allAnimals.Count * 100;
+
+        double totalIncome = 0;
+        double totalCost = 0;
+        double totalTax = 0;
+        double totalWeight = 0;
+        double totalProduceAmount = 0;
+
         foreach (var animal in matchingAnimals)
         {
-            // Create a label to display animal information
-            Label animalLabel = new Label
+            double weight = CalculateWeight(animal);
+            double produceAmountPerDay = CalculateProduceAmount(animal);
+
+            double income = 0;
+            if (animal is Cow cow)
             {
-                Text = animal.ToString(),
-                Margin = new Thickness(0, 10),
-              };
+                income = produceAmountPerDay * 9.4;
+            }
+            else if (animal is Sheep sheep)
+            {
+                income = produceAmountPerDay * 6.2; 
+            }
 
+            double cost = weight * 0.02; 
+            double tax = produceAmountPerDay * 0.02; 
 
+            totalIncome += income;
+            totalCost += cost;
+            totalTax += tax;
+            totalWeight += weight;
+            totalProduceAmount += produceAmountPerDay;
         }
 
+        double averageWeight = totalWeight / totalLivestockCount;
+
+        // Display results
+        totalProduceAmountLabel.Text = $"{totalProduceAmount}";
+        averageWeightLabel.Text = $"{averageWeight}";
+        totalTaxLabel.Text = $"${totalTax:F2}";
+        totalCostLabel.Text = $"${totalCost:F2}";
+        totalIncomeLabel.Text = $"${totalIncome:F2}";
+        percentageLabel.Text = $"{percentage:F2}";
+        totalCountLabel.Text = $"{totalLivestockCount}";
+
+
+    }
+    
+
+    private double CalculateWeight(Animal animal)
+    {
+        // Implement weight calculation based on the type and any other relevant data
+        return animal.Weight; // Placeholder, replace with actual calculation
+    }
+
+    private double CalculateProduceAmount(Animal animal)
+    {
+
+        
+        if (animal is Cow cow)
+        {
+            return cow.Milk;
+        }
+        else if (animal is Sheep sheep)
+        {
+            return sheep.Wool;
+        }
+        return 0;
+    }
+
+    private void OnResetClicked(object sender, EventArgs e)
+    {
+        totalProduceAmountLabel.Text =string.Empty;
+        averageWeightLabel.Text = string.Empty;
+        totalTaxLabel.Text = string.Empty;
+        totalCostLabel.Text = string.Empty;
+        totalIncomeLabel.Text = string.Empty;
+        percentageLabel.Text =  string.Empty;
+        totalCountLabel.Text = string.Empty;
     }
 }
+
+
+
