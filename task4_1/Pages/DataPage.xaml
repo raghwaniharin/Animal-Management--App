@@ -14,13 +14,19 @@
                 <DataTemplate>
 
                     <Border BackgroundColor="Grey" StrokeShape="RoundRectangle 10">
-                        <Grid ColumnDefinitions="*,*,*,*,*,*">
-                            <Label Grid.Column="0" Text="{Binding Id}" HorizontalOptions="Center"/>
-                            <Label Grid.Column="1" Text="{Binding Colour}" HorizontalOptions="Center"/>
-                            <Label Grid.Column="2" Text="{Binding Cost}" HorizontalOptions="Center"/>
-                            <Label Grid.Column="3" Text="{Binding Weight}" HorizontalOptions="Center"/>
-                            <Label Grid.Column="4" Text="{Binding Milk}" HorizontalOptions="Center"/>
-                            <Label Grid.Column="5" Text="{Binding Wool}" HorizontalOptions="Center"/>
+                        <Grid ColumnDefinitions="*,*,*,*,*,*" >
+                            <Grid.Resources>
+                                <Style TargetType="Label">
+                                    <Setter Property="HorizontalOptions" Value="centre"/>
+                                </Style>
+                            </Grid.Resources>
+                            
+                            <Label Grid.Column="0" Text="{Binding Id}"/>
+                            <Label Grid.Column="1" Text="{Binding Colour}"/>
+                            <Label Grid.Column="2" Text="{Binding Cost}"/>
+                            <Label Grid.Column="3" Text="{Binding Weight}"/>
+                            <Label Grid.Column="4" Text="{Binding Milk}"/>
+                            <Label Grid.Column="5" Text="{Binding Wool}"/>
 
                         </Grid>
                     </Border>

@@ -5,16 +5,30 @@
              Title="Query Page">
 
     <Grid Padding="20" ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*,*,*">
-        <Label Text="Select Livestock Type:" VerticalOptions="Center" HorizontalOptions="Start"  Grid.Column="0" Grid.Row="0"/>
-        <Picker x:Name="typePicker" Title="Select Type" SelectedIndexChanged="OnTypeSelectedIndexChanged" Grid.Column="1" Grid.Row="0">
+        <Grid.Resources>
+            <Style TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="WidthRequest" Value="450"/>
+            </Style>
+        </Grid.Resources>
+
+        <Button Text="Search" Clicked="OnSearchClicked" Grid.Row="0" Grid.Column="3"/>
+        <Button Text="reset" Clicked="OnResetClicked" Grid.Row="1" Grid.Column="3"/>
+        
+        <Label Text="Select Livestock Type:"  Grid.Column="0" Grid.Row="0"/>
+        <Picker x:Name="typePicker" Title="Select Type" SelectedIndexChanged="OnTypeSelectedIndexChanged" 
+                Grid.Column="1" Grid.Row="0">
             <Picker.Items>
                 <x:String>Cow</x:String>
                 <x:String>Sheep</x:String>
             </Picker.Items>
         </Picker>
 
-        <Label Text="Select Colour:" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="0" Grid.Row="1"/>
-        <Picker x:Name="colourPicker" Title="Select Colour" SelectedIndexChanged="OnColourSelectedIndexChanged" Grid.Row="1" Grid.Column="1">
+        <Label Text="Select Colour:" Grid.Column="0" Grid.Row="1"/>
+        
+        <Picker x:Name="colourPicker" Title="Select Colour" Grid.Row="1" Grid.Column="1">
             <Picker.Items>
                 <x:String>All</x:String>
                 <x:String>Black</x:String>
@@ -22,32 +36,27 @@
                 <x:String>Red</x:String>
             </Picker.Items>
         </Picker>
-        <Label x:Name="label1"  Grid.Row="2" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start"/>
-        <Label x:Name="totalCountLabel" Grid.Row="2" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start"/>
+        <Label x:Name="label1" Text="number of livestock" Grid.Row="2" Grid.Column="0"/>
+        <Label x:Name="totalCountLabel" Grid.Row="2" Grid.Column="1"/>
 
-        <Label Text="Percentage:" Grid.Row="3" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start"/>
-        <Label x:Name="percentageLabel" Grid.Row="3" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start"/>
+        <Label Text="Percentage:" Grid.Row="3" Grid.Column="0"/>
+        <Label x:Name="percentageLabel" Grid.Row="3" Grid.Column="1"/>
 
-        <Label Text="Total Income:" Grid.Row="4" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start"/>
-        <Label x:Name="totalIncomeLabel" Grid.Row="4" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start"/>
+        <Label Text="Total Income:" Grid.Row="4" Grid.Column="0"/>
+        <Label x:Name="totalIncomeLabel" Grid.Row="4" Grid.Column="1"/>
 
-        <Label Text="Total Cost:" Grid.Row="5" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start"/>
-        <Label x:Name="totalCostLabel" Grid.Row="5" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start"/>
+        <Label Text="Total Cost:" Grid.Row="5" Grid.Column="0"/>
+        <Label x:Name="totalCostLabel" Grid.Row="5" Grid.Column="1"/>
 
-        <Label Text="Total Tax:" Grid.Row="6" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start"/>
-        <Label x:Name="totalTaxLabel" Grid.Row="6" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start"/>
+        <Label Text="Total Tax:" Grid.Row="6" Grid.Column="0"/>
+        <Label x:Name="totalTaxLabel" Grid.Row="6" Grid.Column="1"/>
 
-        <Label Text="Average Weight:" Grid.Row="7" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start"/>
-        <Label x:Name="averageWeightLabel" Grid.Row="7" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start"/>
+        <Label Text="Average Weight:" Grid.Row="7" Grid.Column="0"/>
+        <Label x:Name="averageWeightLabel" Grid.Row="7" Grid.Column="1"/>
 
-        <Label Text="Total Produce Amount per Day:" Grid.Row="8" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start"/>
-        <Label x:Name="totalProduceAmountLabel" Grid.Row="8" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start"/>
+        <Label Text="Total Produce Amount per Day:" Grid.Row="8" Grid.Column="0"/>
+        <Label x:Name="totalProduceAmountLabel" Grid.Row="8" Grid.Column="1"/>
 
-        <ScrollView Grid.Row="9" Grid.Column="3" Grid.ColumnSpan="3">
-            <StackLayout x:Name="animalListContainer"/>
-        </ScrollView>
-        <Button Text="Search" Clicked="OnSearchClicked" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="0" Grid.Column="3"/>
-        <Button Text="reset" Clicked="OnResetClicked" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="1" Grid.Column="3"/>
     </Grid>
 
 </ContentPage>

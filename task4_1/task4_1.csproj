@@ -63,6 +63,9 @@
 	  <MauiXaml Update="Pages\DataPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\InsertAnimal.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\QuerryPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

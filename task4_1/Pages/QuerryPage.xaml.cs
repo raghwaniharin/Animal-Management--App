@@ -14,10 +14,10 @@ public partial class QuerryPage : ContentPage
     private void OnTypeSelectedIndexChanged(object sender, EventArgs e)
     {
         string selectedType = typePicker.SelectedItem.ToString();
-        //typePicker.SelectedIndex = 0;
+        typePicker.SelectedIndex = 0;
         colourPicker.SelectedIndex = 0;
 
-        // Enable/disable colour options based on selected type
+        
         if (selectedType == "Cow")
         {
             colourPicker.IsEnabled = true;
@@ -32,15 +32,7 @@ public partial class QuerryPage : ContentPage
         }
     }
 
-    private void OnColourSelectedIndexChanged(object sender, EventArgs e)
-    {
-        if (colourPicker.SelectedItem != null)
-        {
-            string selectedColour = colourPicker.SelectedItem.ToString();
-            //DisplayAlert("Selected Colour", $"You selected: {selectedColour}", "OK");
-        }
-
-    }
+    
 
     private void OnSearchClicked(object sender, EventArgs e)
     {
@@ -117,8 +109,7 @@ public partial class QuerryPage : ContentPage
 
     private double CalculateWeight(Animal animal)
     {
-        // Implement weight calculation based on the type and any other relevant data
-        return animal.Weight; // Placeholder, replace with actual calculation
+        return animal.Weight; 
     }
 
     private double CalculateProduceAmount(Animal animal)

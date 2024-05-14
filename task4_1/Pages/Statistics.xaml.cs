@@ -72,4 +72,16 @@ public partial class Statistics : ContentPage
         sheepdailyprft.Text = $"${sheepprofit:F2}";
         avgsheepdailyprft.Text = $"${(sheepprofit / countSheep):F2}";
     }
+
+    private void OnResetClicked(object sender, EventArgs e)
+    {
+        sheepdailyprft.Text = string.Empty;
+        avgsheepdailyprft.Text = string.Empty;
+        cowdailyprft.Text = string.Empty;
+        avgcowdailyprft.Text = string.Empty;
+        averageweight.Text = string.Empty;
+        govttax.Text = string.Empty;
+        farmdailyprofit.Text = string.Empty;
+
+    }
 }
