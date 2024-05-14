@@ -72,6 +72,7 @@ public partial class QuerryPage : ContentPage
         double totalTax = 0;
         double totalWeight = 0;
         double totalProduceAmount = 0;
+        
 
         foreach (var animal in matchingAnimals)
         {
@@ -82,6 +83,7 @@ public partial class QuerryPage : ContentPage
             if (animal is Cow cow)
             {
                 income = produceAmountPerDay * 9.4;
+                
             }
             else if (animal is Sheep sheep)
             {
@@ -101,14 +103,14 @@ public partial class QuerryPage : ContentPage
         double averageWeight = totalWeight / totalLivestockCount;
 
         // Display results
-        totalProduceAmountLabel.Text = $"{totalProduceAmount}";
-        averageWeightLabel.Text = $"{averageWeight}";
+        totalProduceAmountLabel.Text = $"{totalProduceAmount:F2}";
+        averageWeightLabel.Text = $"{averageWeight:F2}";
         totalTaxLabel.Text = $"${totalTax:F2}";
         totalCostLabel.Text = $"${totalCost:F2}";
         totalIncomeLabel.Text = $"${totalIncome:F2}";
         percentageLabel.Text = $"{percentage:F2}";
         totalCountLabel.Text = $"{totalLivestockCount}";
-
+        label1.Text = $"Number of livestock( {selectedType} in {selectedColour} colour)";
 
     }
     

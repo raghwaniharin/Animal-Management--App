@@ -22,7 +22,7 @@
                 <x:String>Red</x:String>
             </Picker.Items>
         </Picker>
-        <Label Text="Total Selected Livestock Count:" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start"/>
+        <Label x:Name="label1"  Grid.Row="2" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start"/>
         <Label x:Name="totalCountLabel" Grid.Row="2" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start"/>
 
         <Label Text="Percentage:" Grid.Row="3" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start"/>
