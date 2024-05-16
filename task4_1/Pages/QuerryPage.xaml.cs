@@ -34,6 +34,16 @@ public partial class QuerryPage : ContentPage
 
     private void OnSearchClicked(object sender, EventArgs e)
     {
+        if (typePicker.SelectedItem is null)
+        {
+            DisplayAlert("Error","Did Not selet any animal","OK");    
+            return;
+        }
+        if (colourPicker.SelectedItem is null)
+        {
+            DisplayAlert("Error", "Did Not selet colour", "OK");
+            return;
+        }
         // Get selected type and colour
         string selectedType = typePicker.SelectedItem.ToString();
         string selectedColour = colourPicker.SelectedItem.ToString();
@@ -105,7 +115,7 @@ public partial class QuerryPage : ContentPage
     }
     
 
-    private double CalculateWeight(Animal animal)
+    private static double CalculateWeight(Animal animal)
     {
         return animal.Weight; 
     }

@@ -17,7 +17,8 @@
         </Tab>
         <Tab Title="Querry Page" Icon="sundust.svg">
             <ShellContent ContentTemplate="{DataTemplate Pages:QuerryPage}"/>
-        </Tab><Tab Title="Insert Animal" Icon="sundust.svg">
+        </Tab>
+        <Tab Title="Insert Animal" Icon="sundust.svg">
             <ShellContent ContentTemplate="{DataTemplate Pages:InsertAnimal}"/>
         </Tab>
 
