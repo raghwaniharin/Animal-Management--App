@@ -17,7 +17,7 @@
                         <Grid ColumnDefinitions="*,*,*,*,*,*" >
                             <Grid.Resources>
                                 <Style TargetType="Label">
-                                    <Setter Property="HorizontalOptions" Value="centre"/>
+                                    <Setter Property="HorizontalOptions" Value="Center"/>
                                 </Style>
                             </Grid.Resources>
                             

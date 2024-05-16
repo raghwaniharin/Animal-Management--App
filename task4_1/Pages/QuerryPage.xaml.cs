@@ -14,7 +14,7 @@ public partial class QuerryPage : ContentPage
     private void OnTypeSelectedIndexChanged(object sender, EventArgs e)
     {
         string selectedType = typePicker.SelectedItem.ToString();
-        typePicker.SelectedIndex = 0;
+        //typePicker.SelectedIndex = 0;
         colourPicker.SelectedIndex = 0;
 
         
@@ -26,9 +26,7 @@ public partial class QuerryPage : ContentPage
         {
             colourPicker.IsEnabled = true;
             colourPicker.SelectedIndex = 0;
-            // Disable "All" option and select "White" by default
-            //colourPicker.Items.Remove("All");
-            //colourPicker.SelectedItem = "White";
+            
         }
     }
 
