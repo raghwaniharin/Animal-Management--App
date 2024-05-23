@@ -4,19 +4,21 @@ public partial class InsertAnimal : ContentPage
 {
     MainViewModel vm;
     private List<Animal> allAnimals1;
-    public InsertAnimal( MainViewModel vm)
-	{
-		InitializeComponent();
+    private Animal animal; // Declare the animal variable at the class level
+
+    public InsertAnimal(MainViewModel vm)
+    {
+        InitializeComponent();
         this.vm = vm;
         BindingContext = vm;
         allAnimals1 = vm.Animals.ToList();
     }
+
     private void OnTypeSelectedIndexChanged(object sender, EventArgs e)
     {
         string selectedType = typePicker.SelectedItem.ToString();
         typePicker.SelectedIndex = 0;
         colourPicker.SelectedIndex = 0;
-
 
         if (selectedType == "Cow")
         {
@@ -25,6 +27,7 @@ public partial class InsertAnimal : ContentPage
             milkLabel.IsVisible = true;
             woolEntry.IsVisible = false;
             woolLabel.IsVisible = false;
+            animal = new Cow(); // Initialize animal as Cow
         }
         else if (selectedType == "Sheep")
         {
@@ -34,13 +37,16 @@ public partial class InsertAnimal : ContentPage
             woolLabel.IsVisible = true;
             milkEntry.IsVisible = false;
             milkLabel.IsVisible = false;
-
+            animal = new Sheep(); // Initialize animal as Sheep
         }
-        
-
     }
+
     private void OnInsertAnimalClicked(object sender, EventArgs e)
     {
+        // Initialize milkAmount and woolAmount with default values
+        double milkAmount = 0;
+        double woolAmount = 0;
+
         // Validate costEntry
         if (!double.TryParse(costEntry.Text, out double cost))
         {
@@ -48,26 +54,48 @@ public partial class InsertAnimal : ContentPage
             return;
         }
 
+        // Validate weightEntry
+        if (!double.TryParse(weightEntry.Text, out double weight))
+        {
+            DisplayAlert("Error", "Weight must be a valid number", "OK");
+            return;
+        }
+
         // Validate milkEntry (if visible)
-        if (milkEntry.IsVisible && !double.TryParse(milkEntry.Text, out double milkAmount))
+        if (milkEntry.IsVisible && !double.TryParse(milkEntry.Text, out milkAmount))
         {
             DisplayAlert("Error", "Milk amount must be a valid number", "OK");
             return;
         }
 
         // Validate woolEntry (if visible)
-        if (woolEntry.IsVisible && !double.TryParse(woolEntry.Text, out double woolAmount))
+        if (woolEntry.IsVisible && !double.TryParse(woolEntry.Text, out woolAmount))
         {
             DisplayAlert("Error", "Wool amount must be a valid number", "OK");
             return;
         }
 
-        // Insert the animal into the list and database
-        var animal = new Animal
-        {};
-        vm.Animals.Add(animal); // Add to list
-                                // Insert into database (You need to implement this logic)
+        // Set common properties
+        animal.Colour = colourPicker.SelectedItem.ToString();
+        animal.Cost = cost;
+        animal.Weight = weight;
 
+        // Set specific properties based on type
+        if (animal is Cow cow)
+        {
+            cow.Milk = milkAmount;
+        }
+        else if (animal is Sheep sheep)
+        {
+            sheep.Wool = woolAmount;
+        }
+
+        // Insert the animal into the list and database
+        vm.Animals.Add(animal); // Add to list
+        vm._database.InsertItem(animal);
+
+        // Reset the form
+        OnResetClicked(sender, e);
     }
 
     private void OnResetClicked(object sender, EventArgs e)
@@ -88,6 +116,4 @@ public partial class InsertAnimal : ContentPage
         woolEntry.IsVisible = false;
         woolLabel.IsVisible = false;
     }
-
-   
 }

@@ -2,6 +2,7 @@
 
 public class Animal
 {
+    [PrimaryKey ,AutoIncrement]
     public int Id { get; set; }
     public string Colour { get; set; }
 
