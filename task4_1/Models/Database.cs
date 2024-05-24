@@ -9,6 +9,7 @@ public class Database
         //var dbPath = Path.Combine(dataDir, "EmployeeData.db");
         string dbName = "FarmDataOriginal.db";
         string dbPath = Path.Combine(Current.AppDataDirectory, dbName);
+        
         if (!File.Exists(dbPath))
         {
             //open the file from asset folder 

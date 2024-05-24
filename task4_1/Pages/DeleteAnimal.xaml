@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="task4_1.Pages.DeleteAnimal"
+             Title="DeleteAnimal">
+    <Grid Margin="0,30" ColumnDefinitions="250,400" ColumnSpacing="50" HorizontalOptions="Center"
+          RowDefinitions="*,*" RowSpacing="25" VerticalOptions="Center">
+        <Grid.Resources>
+            <Style TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="HeightRequest" Value="100"/>
+                <Setter Property="WidthRequest" Value="350"/>
+            </Style>
+        </Grid.Resources>
+        <Entry x:Name="IdEntry" Placeholder="Enter animal ID:" Grid.Row="0" Grid.Column="0"/>
+        <Button Grid.Column="0" Grid.Row="1" Clicked="IdEntryBtn_click" Text="OK"/>
+        <Label x:Name="ResultLabel" Grid.Row="0" Grid.Column="1"
+               BackgroundColor="PeachPuff" TextColor="Black" Text="result here::::"/>
+        <Button Text="Reset" Clicked="OnResetClicked" Grid.Row="1" Grid.Column="1" />
+    </Grid>
+</ContentPage>

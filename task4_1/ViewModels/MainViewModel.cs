@@ -12,5 +12,12 @@ public class MainViewModel
         Animals = new();
         _database.ReadItems().ForEach(x => Animals.Add(x));
     }
-    
+    public void AddItem(Animal ani)
+    {
+        int r = _database.InsertItem(ani);
+        if(r > 0)
+        {
+            Animals.Add(ani);
+        }
+    }
 }

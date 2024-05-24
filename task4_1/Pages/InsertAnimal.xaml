@@ -28,7 +28,7 @@
         <Label Text="Select Colour:" Grid.Column="0" Grid.Row="1"/>
         <Picker x:Name="colourPicker" Title="Select Colour" Grid.Row="1" Grid.Column="1">
             <Picker.Items>
-                <x:String>All</x:String>
+                
                 <x:String>Black</x:String>
                 <x:String>White</x:String>
                 <x:String>Red</x:String>

@@ -2,8 +2,8 @@ namespace task4_1.Pages;
 
 public partial class InsertAnimal : ContentPage
 {
-    MainViewModel vm;
-    private List<Animal> allAnimals1;
+    public MainViewModel vm;
+    
     private Animal animal; // Declare the animal variable at the class level
 
     public InsertAnimal(MainViewModel vm)
@@ -11,7 +11,7 @@ public partial class InsertAnimal : ContentPage
         InitializeComponent();
         this.vm = vm;
         BindingContext = vm;
-        allAnimals1 = vm.Animals.ToList();
+    
     }
 
     private void OnTypeSelectedIndexChanged(object sender, EventArgs e)
@@ -22,6 +22,7 @@ public partial class InsertAnimal : ContentPage
 
         if (selectedType == "Cow")
         {
+            typePicker.SelectedIndex = 0;
             colourPicker.IsEnabled = true;
             milkEntry.IsVisible = true;
             milkLabel.IsVisible = true;
@@ -31,6 +32,7 @@ public partial class InsertAnimal : ContentPage
         }
         else if (selectedType == "Sheep")
         {
+            typePicker.SelectedIndex = 1;
             colourPicker.IsEnabled = true;
             colourPicker.SelectedIndex = 0;
             woolEntry.IsVisible = true;
@@ -83,19 +85,23 @@ public partial class InsertAnimal : ContentPage
         // Set specific properties based on type
         if (animal is Cow cow)
         {
-            cow.Milk = milkAmount;
+            ((Cow)animal).Milk = milkAmount;
         }
         else if (animal is Sheep sheep)
         {
-            sheep.Wool = woolAmount;
+            ((Sheep)animal).Wool = woolAmount;
         }
 
         // Insert the animal into the list and database
-        vm.Animals.Add(animal); // Add to list
-        vm._database.InsertItem(animal);
+        vm.AddItem(animal);
+        //DisplayAlert("Error", $"Animals.size={vm.Animals.Count}", "OK");
+        //vm.Animals.Add(animal); // Add to list
+                                //vm._database.InsertItem(animal);
+        DisplayAlert("Error", $"Animals.size={vm.Animals.Count}", "OK");
+
 
         // Reset the form
-        OnResetClicked(sender, e);
+        //OnResetClicked(sender, e);
     }
 
     private void OnResetClicked(object sender, EventArgs e)
@@ -107,8 +113,8 @@ public partial class InsertAnimal : ContentPage
         woolEntry.Text = string.Empty;
 
         // Reset pickers
-        typePicker.SelectedIndex = 0;
-        colourPicker.SelectedIndex = 0;
+        typePicker.SelectedIndex = -1;
+        colourPicker.SelectedIndex = -1;
 
         // Hide milk and wool entries and labels
         milkEntry.IsVisible = false;
