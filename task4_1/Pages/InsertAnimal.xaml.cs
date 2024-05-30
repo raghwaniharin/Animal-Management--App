@@ -83,25 +83,20 @@ public partial class InsertAnimal : ContentPage
         animal.Weight = weight;
 
         // Set specific properties based on type
-        if (animal is Cow cow)
+        if (animal is Cow)
         {
             ((Cow)animal).Milk = milkAmount;
         }
-        else if (animal is Sheep sheep)
+        else if (animal is Sheep)
         {
             ((Sheep)animal).Wool = woolAmount;
         }
 
         // Insert the animal into the list and database
         vm.AddItem(animal);
-        //DisplayAlert("Error", $"Animals.size={vm.Animals.Count}", "OK");
-        //vm.Animals.Add(animal); // Add to list
-                                //vm._database.InsertItem(animal);
+        vm._database.InsertItem(animal);
         DisplayAlert("Error", $"Animals.size={vm.Animals.Count}", "OK");
 
-
-        // Reset the form
-        //OnResetClicked(sender, e);
     }
 
     private void OnResetClicked(object sender, EventArgs e)

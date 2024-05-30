@@ -4,7 +4,7 @@
              x:Class="task4_1.Pages.DeleteAnimal"
              Title="DeleteAnimal">
     <Grid Margin="0,30" ColumnDefinitions="250,400" ColumnSpacing="50" HorizontalOptions="Center"
-          RowDefinitions="*,*" RowSpacing="25" VerticalOptions="Center">
+          RowDefinitions="*,*,*" RowSpacing="25" VerticalOptions="Center">
         <Grid.Resources>
             <Style TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="Center"/>
@@ -14,9 +14,10 @@
             </Style>
         </Grid.Resources>
         <Entry x:Name="IdEntry" Placeholder="Enter animal ID:" Grid.Row="0" Grid.Column="0"/>
-        <Button Grid.Column="0" Grid.Row="1" Clicked="IdEntryBtn_click" Text="OK"/>
+        <Button Grid.Column="0" Grid.Row="1" Clicked="IdEntryBtn_click" Text="SEARCH"/>
         <Label x:Name="ResultLabel" Grid.Row="0" Grid.Column="1"
                BackgroundColor="PeachPuff" TextColor="Black" Text="result here::::"/>
         <Button Text="Reset" Clicked="OnResetClicked" Grid.Row="1" Grid.Column="1" />
+        <Button Grid.Column="0" Grid.Row="2" Clicked="DeleteBtn_Click" Text="DELETE"/>
     </Grid>
 </ContentPage>

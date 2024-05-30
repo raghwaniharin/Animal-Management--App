@@ -3,6 +3,7 @@ namespace task4_1.Pages;
 public partial class DeleteAnimal : ContentPage
 {
     MainViewModel vm;
+    
     public DeleteAnimal(MainViewModel vm)
     {
         InitializeComponent();
@@ -50,5 +51,20 @@ public partial class DeleteAnimal : ContentPage
             // If the animal with the provided ID is not found
             ResultLabel.Text = "Animal not found";
         }
+    }
+
+    private void DeleteBtn_Click(object sender, EventArgs e)
+    {
+       
+        if (!int.TryParse(IdEntry.Text, out int animalId))
+        {
+            DisplayAlert("Error", "Invalid input", "OK");
+            return;
+        }
+
+        Animal animal = vm.Animals.FirstOrDefault(a => a.Id == animalId);
+        vm._database.DeleteItem(animal);
+        DisplayAlert("congrats", "Successful Deletion", "OK");
+
     }
 }
