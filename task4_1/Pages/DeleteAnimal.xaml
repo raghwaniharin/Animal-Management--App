@@ -9,14 +9,13 @@
             <Style TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="FontSize" Value="Small"/>
-                <Setter Property="HeightRequest" Value="100"/>
+                <Setter Property="HeightRequest" Value="150"/>
                 <Setter Property="WidthRequest" Value="350"/>
             </Style>
         </Grid.Resources>
         <Entry x:Name="IdEntry" Placeholder="Enter animal ID:" Grid.Row="0" Grid.Column="0"/>
         <Button Grid.Column="0" Grid.Row="1" Clicked="IdEntryBtn_click" Text="SEARCH"/>
-        <Label x:Name="ResultLabel" Grid.Row="0" Grid.Column="1"
-               BackgroundColor="PeachPuff" TextColor="Black" Text="result here::::"/>
+        <Label x:Name="ResultLabel" Grid.Row="0" Grid.Column="1" Text="result here::::" FontSize="Small"/>
         <Button Text="Reset" Clicked="OnResetClicked" Grid.Row="1" Grid.Column="1" />
         <Button Grid.Column="0" Grid.Row="2" Clicked="DeleteBtn_Click" Text="DELETE"/>
     </Grid>

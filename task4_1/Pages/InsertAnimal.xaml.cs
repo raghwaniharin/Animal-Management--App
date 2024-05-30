@@ -95,7 +95,7 @@ public partial class InsertAnimal : ContentPage
         // Insert the animal into the list and database
         vm.AddItem(animal);
         vm._database.InsertItem(animal);
-        DisplayAlert("Error", $"Animals.size={vm.Animals.Count}", "OK");
+        //DisplayAlert("Error", $"Animals.size={vm.Animals.Count}", "OK");
 
     }
 
