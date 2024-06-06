@@ -24,6 +24,9 @@
         <Tab Title="Delete Animal" Icon="sundust.svg">
                     <ShellContent ContentTemplate="{DataTemplate Pages:DeleteAnimal}"/>
                 </Tab>
+        <Tab Title="Update Animal" Icon="sundust.svg">
+                    <ShellContent ContentTemplate="{DataTemplate Pages:UpdateAnimal}"/>
+                </Tab>
 
     </TabBar>
     

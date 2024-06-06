@@ -26,6 +26,7 @@ public static class MauiProgram
 		builder.Services.AddTransient<QuerryPage>();
 		builder.Services.AddTransient<InsertAnimal>();
 		builder.Services.AddTransient<DeleteAnimal>();
+		builder.Services.AddTransient<UpdateAnimal>();
 ;        return builder.Build();
 	}
 }

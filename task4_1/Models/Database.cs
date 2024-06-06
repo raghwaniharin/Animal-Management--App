@@ -5,8 +5,7 @@ public class Database
     private readonly SQLiteConnection _connection;
     public Database()
     {
-        //var dataDir = @"C:\Users\harin\Desktop\wintec\sem3\COMP609-app dev\EmployeeData.db";
-        //var dbPath = Path.Combine(dataDir, "EmployeeData.db");
+        
         string dbName = "FarmDataOriginal.db";
         string dbPath = Path.Combine(Current.AppDataDirectory, dbName);
         
