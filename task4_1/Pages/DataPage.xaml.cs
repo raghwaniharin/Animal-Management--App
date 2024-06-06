@@ -8,5 +8,7 @@ public partial class DataPage : ContentPage
 	{
 		InitializeComponent();
 		BindingContext = vm;
-	}
+		AnimalCollView.ItemsSource = vm.Animals;
+
+    }
 }

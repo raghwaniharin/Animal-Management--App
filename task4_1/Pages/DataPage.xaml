@@ -9,7 +9,7 @@
     <Border Margin="40,40" BackgroundColor="PeachPuff" StrokeShape="RoundRectangle 10">
 
         <CollectionView BackgroundColor="LightBlue"
-                        ItemsSource="{Binding Animals, Source={ViewModels:MainViewModel}}">
+                        x:Name="AnimalCollView">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
 

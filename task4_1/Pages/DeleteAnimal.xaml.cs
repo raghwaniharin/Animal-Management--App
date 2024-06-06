@@ -73,6 +73,7 @@ public partial class DeleteAnimal : ContentPage
         if (animal != null)
         {
             vm._database.DeleteItem(animal);
+            vm.Animals.Remove(animal);
             DisplayAlert("congrats", "Successful Deletion", "OK");
         }
     }

@@ -10,7 +10,7 @@
                 <Style TargetType="Label">
                     <Setter Property="HorizontalOptions" Value="Center"/>
                     <Setter Property="FontSize" Value="Small"/>
-                    <!--<Setter Property="HeightRequest" Value="auto"/>-->
+                    
                     <Setter Property="WidthRequest" Value="450"/>
                 <Setter Property="FontSize" Value="Small"/>
             </Style>
