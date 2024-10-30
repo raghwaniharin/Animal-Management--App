@@ -1,3 +1,5 @@
+Farm Management App
+
 [alexassmnts.pdf](https://github.com/user-attachments/files/16534529/alexassmnts.pdf)
 
 The purpose of the assignment was to familiarize ourselves at .NetMAUI and the visual studio. We also first hand implemented OOP concepts.
