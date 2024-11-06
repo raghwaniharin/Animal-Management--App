@@ -25,3 +25,21 @@ this is such that when passing this app to users we can limit their access to so
 **
 _
 this is a product of HARIN RAMJI and is meant for study purposes_**
+
+![image](https://github.com/user-attachments/assets/b15345da-3789-4f86-b6df-4e02e0e9db27)
+
+![image](https://github.com/user-attachments/assets/c7095c1b-94ea-4512-8b9a-424d4359daec)
+
+![image](https://github.com/user-attachments/assets/79f8393b-c8ab-4c6d-ae93-077805bd7a14)
+
+![image](https://github.com/user-attachments/assets/07c5b08b-bc3b-4dec-8bef-4700b543e104)
+
+![image](https://github.com/user-attachments/assets/c8abbc7b-9712-4080-867e-a11cf7bd977d)
+
+![image](https://github.com/user-attachments/assets/8f38371c-a1fb-4dff-967a-1b18aa8b4714)
+
+
+
+
+
+
